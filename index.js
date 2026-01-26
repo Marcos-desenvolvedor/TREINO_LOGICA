@@ -2,6 +2,9 @@ import { BiggerNumber } from "./services/funcoes.js";
 import { readNumber } from "./services/loops.js";
 import { typeNumber } from "./services/funcoes.js";
 import { getNote } from "./services/funcoes.js";
+import { getAge } from "./services/funcoes.js";
+import { sumArr } from "./services/arrays.js";
+import { readArr } from "./services/arrays.js";
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
@@ -44,4 +47,20 @@ function GetNote() {
   }
 }
 
-GetNote();
+// GetNote();
+
+function GetAgeUser() {
+  try {
+    const Age = readNumber("DIGITE SUA IDADE: ");
+
+    const statusAge = getAge(Age);
+
+    console.log("ELE É: ", statusAge);
+  } catch (error) {
+    console.log(error.message ?? error);
+  }
+}
+
+const arr = sumArr([3, 4, 5, 6, 7]);
+
+const arrr = readArr(["Marcos", "Bruno", "Thiago"]);

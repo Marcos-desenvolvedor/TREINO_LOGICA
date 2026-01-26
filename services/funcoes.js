@@ -42,3 +42,21 @@ export function getNote(note) {
 
   return status;
 }
+
+export function getAge(age) {
+  const Age = Number(age);
+
+  if (Age < 0) {
+    throw new Error("Idade inválida");
+  }
+
+  let status;
+
+  if (Age >= 18) {
+    status = "Maior de Idade";
+  } else {
+    status = "Menor de Idade";
+  }
+
+  return status;
+}
