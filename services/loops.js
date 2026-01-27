@@ -14,6 +14,7 @@ export function readNumber(valor) {
   }
 }
 
+// TRATA O ERROR DE USER.NAME VIR VAZIO
 export function readUser(valor) {
   while (true) {
     const value = prompt(valor);

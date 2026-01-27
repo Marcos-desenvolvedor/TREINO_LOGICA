@@ -85,6 +85,7 @@ function readArrays() {
 import { searchUser } from "./services/objetos.js";
 import { readUser } from "./services/loops.js";
 
+
 function fluxoo() {
   try {
     const getUserName = readUser("DIGITE SEU NOME: ");
@@ -94,6 +95,7 @@ function fluxoo() {
       name: getUserName,
       age: getAgeUser,
     };
+    
     const userss = searchUser("Lucas", UserComplete);
     console.log(userss);
   } catch (erro) {

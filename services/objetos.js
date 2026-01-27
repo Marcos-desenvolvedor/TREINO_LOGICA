@@ -5,10 +5,11 @@ const Users = [
   },
 ];
 
+// VERIFICA SE O USER JÁ EXISTE NO ARRAY E ADICIONA O USER Q VEIO NO PARAMETRO NO ARRAY
 export function searchUser(user, UserObj) {
-  //   const findUser = Users.includes(User);
   const FindUser = Users.find((User) => User.name === user);
   Users.push(UserObj);
+
   if (FindUser) {
     throw new Error("user já existe");
   }
