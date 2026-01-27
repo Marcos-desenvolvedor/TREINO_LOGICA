@@ -13,3 +13,15 @@ export function readNumber(valor) {
     return Number(value);
   }
 }
+
+export function readUser(valor) {
+  while (true) {
+    const value = prompt(valor);
+
+    if (value === "") {
+      console.log("user inválido");
+      continue;
+    }
+    return String(value);
+  }
+}

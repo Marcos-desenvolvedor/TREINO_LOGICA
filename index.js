@@ -5,7 +5,9 @@ import { getNote } from "./services/funcoes.js";
 import { getAge } from "./services/funcoes.js";
 import { sumArr } from "./services/arrays.js";
 import { readArr } from "./services/arrays.js";
+import { onlyPairs } from "./services/arrays.js";
 import PromptSync from "prompt-sync";
+import { largestNumber } from "./services/arrays.js";
 const prompt = PromptSync();
 
 function GetNumbers() {
@@ -61,6 +63,42 @@ function GetAgeUser() {
   }
 }
 
-const arr = sumArr([3, 4, 5, 6, 7]);
+function readArrays() {
+  //Mostra a soma do itens do Array
+  const arr = sumArr([3, 4, 5, 6, 7]);
+  console.log(arr);
 
-const arrr = readArr(["Marcos", "Bruno", "Thiago"]);
+  //Mostra um nome em cada linha
+  const arrr = readArr(["Marcos", "Bruno", "Thiago"]);
+
+  //Mostra apenas números pares
+  const pares = onlyPairs([2, 6, 4, 7, 3, 2, 1, 0]);
+  console.log(pares);
+
+  //Mostra o maior número de um array
+  const bigNum = largestNumber([2, 6, 4, 7, -2, 2, 100, 0, 94]);
+  console.log(bigNum);
+}
+
+// readArrays();
+
+import { searchUser } from "./services/objetos.js";
+import { readUser } from "./services/loops.js";
+
+function fluxoo() {
+  try {
+    const getUserName = readUser("DIGITE SEU NOME: ");
+    const getAgeUser = readNumber("DIGITE SUA IDADE: ");
+
+    const UserComplete = {
+      name: getUserName,
+      age: getAgeUser,
+    };
+    const userss = searchUser("Lucas", UserComplete);
+    console.log(userss);
+  } catch (erro) {
+    console.log(erro);
+  }
+}
+
+fluxoo();
