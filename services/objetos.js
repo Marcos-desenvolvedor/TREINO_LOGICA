@@ -16,5 +16,5 @@ export function searchUser(user, UserObj) {
   if (FindUser) {
     throw new Error("user já existe");
   }
-  return Users;
+  return "User valido";
 }

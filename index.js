@@ -108,8 +108,18 @@ function fluxo() {
 
 function fluxoCreateUser() {
   try {
-    const email = readEmail("DIGITE SEU EMAIL: ");
-    console.log(email);
+    const Username = readUser("DIGITE SEU USUÁRIO: ");
+    const Email = readEmail("DIGITE SEU EMAIL: ");
+    const Age = readNumber("DIGITE SUA IDADE: ");
+
+    const Userobj = {
+      usuario: Username,
+      email: Email,
+      age: Age,
+    };
+
+    const validauser = searchUser(Username, Userobj);
+    console.log(Userobj);
   } catch (erro) {
     console.log(erro.message ?? erro);
   }
