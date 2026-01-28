@@ -8,6 +8,10 @@ import { readArr } from "./services/arrays.js";
 import { onlyPairs } from "./services/arrays.js";
 import PromptSync from "prompt-sync";
 import { largestNumber } from "./services/arrays.js";
+import { searchUser } from "./services/objetos.js";
+import { readUser } from "./services/loops.js";
+import { readEmail } from "./services/loops.js";
+
 const prompt = PromptSync();
 
 function GetNumbers() {
@@ -23,7 +27,6 @@ function GetNumbers() {
 }
 
 // GetNumbers();
-// console.log("_________________");
 
 function wichNumber() {
   try {
@@ -82,11 +85,7 @@ function readArrays() {
 
 // readArrays();
 
-import { searchUser } from "./services/objetos.js";
-import { readUser } from "./services/loops.js";
-
-
-function fluxoo() {
+function fluxo() {
   try {
     const getUserName = readUser("DIGITE SEU NOME: ");
     const getAgeUser = readNumber("DIGITE SUA IDADE: ");
@@ -95,12 +94,24 @@ function fluxoo() {
       name: getUserName,
       age: getAgeUser,
     };
-    
-    const userss = searchUser("Lucas", UserComplete);
-    console.log(userss);
+
+    const users = searchUser(getUserName, UserComplete);
+
+    console.log(users);
   } catch (erro) {
-    console.log(erro);
+    console.log(erro.message ?? erro);
+    fluxo();
   }
 }
 
-fluxoo();
+// fluxo();
+
+function fluxoCreateUser() {
+  try {
+    const email = readEmail("DIGITE SEU EMAIL: ");
+    console.log(email);
+  } catch (erro) {
+    console.log(erro.message ?? erro);
+  }
+}
+fluxoCreateUser();

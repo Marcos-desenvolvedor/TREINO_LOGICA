@@ -1,4 +1,5 @@
 import PromptSync from "prompt-sync";
+import { validateEmail } from "./validacaoEmial.js";
 const prompt = PromptSync();
 
 // TRATA O ERROR DO PROMPT DO NÚMERO VIR VAZIO OU NÃO SER NÚMERO
@@ -24,5 +25,17 @@ export function readUser(valor) {
       continue;
     }
     return String(value);
+  }
+}
+
+export function readEmail(valor) {
+  while (true) {
+    const email = prompt(valor);
+
+    try {
+      return validateEmail(email);
+    } catch (erro) {
+      console.log(erro.message);
+    }
   }
 }
